@@ -1,0 +1,140 @@
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  height: 100%; /* Ensure body takes full height */
+}
+
+html {
+  height: 100%; /* Ensure html takes full height */
+}
+
+header {
+  padding: 15px;
+  background: #212529;
+  display: flex;
+  align-items: center;
+}
+
+.sidenav {
+  width: 210px;
+  background: #212529;
+  position: absolute;
+  height: 92.5vh; /* Default height */
+  padding: 0 25px;
+  left: -100%;
+  transition: width 0.3s ease, left 0.3s ease; /* Transition width and left properties */
+  flex-direction: column;
+  text-align: center;
+  border-right: 1px solid #212529;
+}
+
+.sidenav.active {
+  left: 0;
+  width: 186px; /* Ensure the width matches the non-collapsed state */
+}
+
+.sidenav.collapsed {
+  width: 60px;
+  left: 0;
+  transition: width 0.3s ease, left 0.3s ease; /* Transition width and left properties */
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.sidenav li {
+  margin: 10px 0;
+}
+
+.sidenav a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidenav a span {
+  margin-left: 10px;
+  display: inline;
+  transition: opacity 0.3s ease, width 0.3s ease; /* Transition opacity and width for span */
+}
+
+.sidenav.collapsed a span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, width 0.3s ease; /* Transition opacity and width for span */
+}
+
+header h1 {
+  margin: 0 12px;
+  font-size: 24px;
+  color: #fff; /* Default color for the rest of the text */
+}
+
+header h1 .highlight {
+  color: #0FFF50; /* Color for the "5J" part */
+}
+
+ul li a {
+  color: #fff;
+  font-family: 'Downey';
+  font-size: 12px;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease; /* Transition background and color for list items */
+}
+
+ul li a:hover,
+ul li a.active {
+  background: #3e454c;
+  color: #0FFF50;
+}
+
+.sidenav ul li a:hover img,
+.sidenav ul li a.active img {
+  filter: brightness() saturate(100%) invert(47%) sepia(95%) saturate(520%) hue-rotate(70deg) brightness(100%) contrast(95%);
+}
+
+header svg {
+  font-size: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease, padding 0.3s ease; /* Transition margin-left and padding for main content */
+  padding: 20px;
+  height: 40rem;
+}
+
+.main.with-sidenav {
+  margin-left: 217px;
+}
+
+.main.collapsed-sidenav {
+  margin-left: 91px; 
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+ul li h1 {
+  align-items: center;
+  justify-content: center;
+}
+
+
